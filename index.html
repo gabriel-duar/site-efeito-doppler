@@ -1,1 +1,95 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora do Efeito Doppler</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+        <h1>Efeito Doppler</h1>
+        <p class="descricao">
+            Informe os dados para calcular a frequência percebida.
+        </p>
+
+        <form id="dopplerForm">
+            <label for="velObservador">
+                Velocidade do observador (m/s)
+            </label>
+            <input
+                type="number"
+                id="velObservador"
+                value="10"
+                step="any"
+                required
+            >
+            <small>
+                Positiva quando o observador se aproxima da fonte.
+            </small>
+
+            <label for="velFonte">
+                Velocidade da fonte sonora (m/s)
+            </label>
+            <input
+                type="number"
+                id="velFonte"
+                value="20"
+                step="any"
+                required
+            >
+            <small>
+                Positiva quando a fonte se aproxima do observador.
+            </small>
+
+            <label for="velSom">
+                Velocidade do som (m/s)
+            </label>
+            <input
+                type="number"
+                id="velSom"
+                value="343"
+                min="0.01"
+                step="any"
+                required
+            >
+
+            <label for="freqFonte">
+                Frequência da fonte (Hz)
+            </label>
+            <input
+                type="number"
+                id="freqFonte"
+                value="500"
+                min="0.01"
+                step="any"
+                required
+            >
+
+            <button type="submit">
+                Calcular frequência percebida
+            </button>
+        </form>
+
+        <section id="resultado" aria-live="polite">
+            <h2>Resultado</h2>
+            <p>Preencha os dados e clique em calcular.</p>
+        </section>
+
+        <section class="formula">
+            <h2>Fórmula utilizada</h2>
+            <p>f' = f × (v + vo) / (v - vs)</p>
+            <p>
+                f' = frequência percebida; f = frequência da fonte;
+                v = velocidade do som; vo = velocidade do observador;
+                vs = velocidade da fonte.
+            </p>
+        </section>
+    </main>
+
+</body>
+</html>
+
